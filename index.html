@@ -10,25 +10,25 @@
         <div class="container">
             <div class="shape"></div>
             <div class="controllers" id="ctrl1">
+                <div class="corner0">
+                    <button class="button" id="btn-incr0" onclick="increase(0)">+</button>
+                    <input type="text" id="corner0" value="0" onkeypress="keyPress(event)">
+                    <button class="button" id="btn-decr0" onclick="decrease(0)">-</button>
+                </div>
                 <div class="corner1">
                     <button class="button" id="btn-incr1" onclick="increase(1)">+</button>
-                    <input type="text" id="corner1" value="0" readonly>
-                    <button class="button" id="btn-decr1" onclick="decrease(1)">-</button>
+                    <input type="text" id="corner1" value="0" onkeypress="keyPress(event)">
+                    <button class="button" id="btn-decr1" onclick="decrease(1)">-</button>    
                 </div>
                 <div class="corner2">
                     <button class="button" id="btn-incr2" onclick="increase(2)">+</button>
-                    <input type="text" id="corner2" value="0" readonly>
+                    <input type="text" id="corner2" value="0" onkeypress="keyPress(event)">
                     <button class="button" id="btn-decr2" onclick="decrease(2)">-</button>
                 </div>
                 <div class="corner3">
-                    <button class="button" id="btn-incr3" onclick="increae(3)">+</button>
-                    <input type="text" id="corner3" value="0" readonly>
+                    <button class="button" id="btn-incr3" onclick="increase(3)">+</button>
+                    <input type="text" id="corner3" value="0" onkeypress="keyPress(event)">
                     <button class="button" id="btn-decr3" onclick="decrease(3)">-</button>
-                </div>
-                <div class="corner4">
-                    <button class="button" id="btn-incr4" onclick="increase(4)">+</button>
-                    <input type="text" id="corner4" value="0" readonly>
-                    <button class="button" id="btn-decr4" onclick="decrease(4)">-</button>    
                 </div>
             </div>
         </div>

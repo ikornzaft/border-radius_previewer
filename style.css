@@ -1,5 +1,48 @@
+.container {
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
+
 .shape {
     background-color: blue;
     width: 250px;
     height: 200px;
 }
+
+.controllers input {
+    width: 20px;
+    text-align: center;
+}
+
+.button {
+    font-size: 10px;
+}
+
+.corner0 {
+    position: absolute;
+    top: -15%;
+    left: -25%;
+}
+
+.corner1 {
+    position: absolute;
+    top: -15%;
+    left: +48%;
+}
+
+.corner2 {
+    position: absolute;
+    bottom: 20%;
+    left: +48%;
+}
+
+.corner3 {
+    position: absolute;
+    bottom: 20%;
+    left: -25%;
+}
+
