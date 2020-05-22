@@ -3,10 +3,9 @@ var radiusString = [0, 0, 0, 0];
 
 function increase(num) {
     if (radiusString[num] < 50) {
-        radiusString[num] += 1;
+        radiusString[num] = Number(radiusString[num]) + 1;
         document.getElementById('corner' + num).value = radiusString[num];
-        document.querySelector('.shape').style.borderRadius = radiusString[0] + 'px ' + 
-        radiusString[1] + 'px ' + radiusString[2] + 'px ' + radiusString[3] + 'px';
+        redrawShape();
     };
     
 }
@@ -15,8 +14,7 @@ function decrease(num) {
     if (radiusString[num] > 0) {
         radiusString[num] -= 1;
         document.getElementById('corner' + num).value = radiusString[num];
-        document.querySelector('.shape').style.borderRadius = radiusString[0] + 'px ' + 
-        radiusString[1] + 'px ' + radiusString[2] + 'px ' + radiusString[3] + 'px';
+        redrawShape();
     };
 }
 
@@ -27,17 +25,29 @@ function keyPress(event) {
         cornerNumber = idString.charAt(idString.length - 1);
         enteredValue = document.getElementById('corner' + cornerNumber).value;
         
-        if (enteredValue >= 0 && enteredValue < 51) {
-            ;
-        };
-    }
+        if (isNaN(enteredValue) || enteredValue < 0 || enteredValue > 50) {
+            document.getElementById('corner' + cornerNumber).value = "0";
+            return;
+        } else {
+            radiusString[cornerNumber] = enteredValue;
+            redrawShape();
+        }
+    };
 };
 
 
-function redrawShape (newValue) {
-
+function redrawShape () {
+    document.querySelector('.shape').style.borderRadius = radiusString[0] + 'px ' + 
+    radiusString[1] + 'px ' + radiusString[2] + 'px ' + radiusString[3] + 'px';
 };
-/*
-radiusString[num] = 
-    document.querySelector('.shape').style.border-radius = radiusString;
-*/
+
+function copy() {
+    var input = document.createElement('textarea');
+    input.innerHTML = 'border-radius: ' + radiusString[0] + 'px ' + 
+    radiusString[1] + 'px ' + radiusString[2] + 'px ' + radiusString[3] + 'px;';
+    document.body.appendChild(input);
+    input.select();
+    var result = document.execCommand('copy');
+    document.body.removeChild(input);
+    return result;
+}

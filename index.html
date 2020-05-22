@@ -12,7 +12,7 @@
             <div class="controllers" id="ctrl1">
                 <div class="corner0">
                     <button class="button" id="btn-incr0" onclick="increase(0)">+</button>
-                    <input type="text" id="corner0" value="0" onkeypress="keyPress(event)">
+                    <input type="text" min="0" max="50" id="corner0" value="0" onkeypress="keyPress(event)">
                     <button class="button" id="btn-decr0" onclick="decrease(0)">-</button>
                 </div>
                 <div class="corner1">
@@ -32,6 +32,8 @@
                 </div>
             </div>
         </div>
+
+        <button class="copy-btn" onclick="copy()">Copy to clipboard</button>
         
         <script src="app.js"></script>
     </body>
