@@ -1,6 +1,5 @@
 var radiusString = [0, 0, 0, 0];
 
-
 function increase(num) {
     if (radiusString[num] < 50) {
         radiusString[num] = Number(radiusString[num]) + 1;
@@ -50,4 +49,13 @@ function copy() {
     var result = document.execCommand('copy');
     document.body.removeChild(input);
     return result;
+}
+
+function reset() {
+    radiusString = [0, 0, 0, 0];
+    redrawShape();
+    for (var i = 0; i < 4; i++) {
+        document.getElementById('corner' + i).value = 0;
+    }
+
 }

@@ -11,6 +11,14 @@
     background-color: blue;
     width: 250px;
     height: 200px;
+    text-align: center;
+}
+
+.shape button {
+    top: 50px;
+    margin: 10px;
+    position: relative;
+    display: inline-block;
 }
 
 .controllers input {
